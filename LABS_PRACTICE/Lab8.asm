@@ -167,3 +167,42 @@ ExitProgram:
 
 main ENDP
 END main
+
+; If the given Character is Alphabet or Not
+
+.data
+    character DWORD ?
+    msg BYTE "Write a character: ",0
+    Notalpha BYTE "Not an alphabet!"
+    alpha BYTE "It is an alphabet!"
+.code
+main PROC
+    lea edx, msg
+    call WriteString
+    call ReadChar
+    mov character, eax
+
+    mov eax, character
+    cmp eax, 'A'
+    JL NotChar
+    cmp eax, 'Z'
+    JLE Char
+
+    cmp eax, 'a'
+    JL NotChar
+    cmp eax, 'z'
+    JLE Char
+
+NotChar:
+    lea edx, Notalpha
+    call WriteString
+    jmp Ex
+
+Char:
+    lea edx, alpha
+    call WriteString
+
+Ex:
+    call exit
+main ENDP
+END main

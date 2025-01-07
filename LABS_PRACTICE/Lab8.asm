@@ -129,3 +129,41 @@ CONTINUE:
 
 main ENDP
 END main
+
+; TAKING INPUT FROM USER
+
+.data
+    num1 DWORD ? 
+    num2 DWORD ? 
+    msg BYTE "Enter a Number: ", 0
+    msgEqual BYTE "All integers are equal.", 0
+    msgNotEqual BYTE "Integers are not equal.", 0
+.code
+main PROC
+    lea edx, msg
+    call WriteString
+    call ReadInt
+    mov num1, eax
+
+    lea edx, msg
+    call WriteString
+    call ReadInt
+    mov num2, eax
+
+    mov eax, num1
+    cmp eax, num2
+    JNE NOTFOUND
+
+    lea edx, msgEqual
+    call WriteString
+    jmp ExitProgram
+
+NOTFOUND:
+    lea edx, msgNotEqual
+    call WriteString
+
+ExitProgram:
+    call exit
+
+main ENDP
+END main

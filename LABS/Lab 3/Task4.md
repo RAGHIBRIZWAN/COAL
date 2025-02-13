@@ -7,7 +7,7 @@ INCLUDE irvine32.inc
 	color BYTE "Black", 0
 	A WORD 12
 	B WORD 2
-	X WORD 13
+	X WORD 13 ; C Reserved for syntax
 	D WORD 8
 	E WORD 14
 .code

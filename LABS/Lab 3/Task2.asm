@@ -1,9 +1,11 @@
-INCLUDE Irvine32.inc
+INCLUDE irvine32.inc
 
 .data
-	val3 SWORD -2147483648
+	val3 SDWORD -2147483647
 .code
 main PROC
-  exit
+	mov eax, val3
+	call DumpRegs
+exit
 main ENDP
 END main

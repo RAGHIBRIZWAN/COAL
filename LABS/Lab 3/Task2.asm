@@ -1,3 +1,6 @@
+## TASK 2
+
+```asm
 INCLUDE irvine32.inc
 
 .data
@@ -9,3 +12,6 @@ main PROC
 exit
 main ENDP
 END main
+```
+
+## OUTPUT

@@ -1,4 +1,4 @@
-## TASK 4
+## TASK 4 (1)
 
 ```asm
 INCLUDE Irvine32.inc
@@ -24,7 +24,7 @@ END main
 ## OUTPUT:
 ![image](https://github.com/user-attachments/assets/5e63fb5d-0324-439a-97e9-d29461f07430)
 
-
+## (b)
 ```asm
 INCLUDE Irvine32.inc
 

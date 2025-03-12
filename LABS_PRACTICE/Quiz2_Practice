@@ -49,3 +49,41 @@ myadd PROC
 	ret
 myadd ENDP
 END main
+
+
+
+INCLUDE Irvine32.inc
+TITLE Read from terminal
+.data
+	qs1 BYTE "Enter your Name:",0
+	qs2 BYTE "Enter the number:",0
+	ans1 BYTE "Name:",0
+	ans2 BYTE "Number:",0
+	reading1 BYTE 80 DUP(?)
+	reading2 BYTE ?
+
+.code
+main PROC
+	mov edx,OFFSET qs1
+	call WriteString
+	mov edx,OFFSET reading1
+	mov ecx,LENGTHOF reading1 - 1
+	call ReadString
+	mov eax,edx
+	mov edx,OFFSET ans1
+	call WriteString
+	mov edx,eax
+	call WriteString
+	
+	call crlf
+
+	mov edx,OFFSET qs2
+	call WriteString
+	mov eax,OFFSET reading2
+	call ReadInt
+
+	mov edx,OFFSET ans2
+	call WriteString
+	call WriteInt
+main ENDP
+END main

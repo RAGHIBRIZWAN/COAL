@@ -166,3 +166,33 @@ L2:
 	exit
 main ENDP
 END main
+
+
+
+INCLUDE Irvine32.inc
+TITLE USES Operator
+.data
+	
+.code
+main PROC
+	mov ecx,10
+	mov edx,5
+	call sum
+	mov eax,ecx
+	call WriteInt
+	mov eax,edx
+	call WriteInt
+	exit
+main ENDP
+
+sum PROC USES edx ecx ; USES push the register values in stack and pop it when we call return command
+	mov ecx,20
+	mov eax,ecx
+	call WriteInt
+	mov edx,40
+	mov eax,edx
+	call WriteInt
+	ret
+sum ENDP
+
+END main

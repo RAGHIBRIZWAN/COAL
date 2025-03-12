@@ -131,3 +131,38 @@ add3 PROC
 	ret
 add3 ENDP
 END main
+
+
+
+INCLUDE Irvine32.inc
+TITLE Add all 3 Arrays
+.data
+	arr1 DWORD 1,2,3,4,5
+	arr2 DWORD 10,20,30,40,50
+	arr3 DWORD 100,200,300,400,500
+	res1 DWORD 5 DUP(0)
+.code
+main PROC
+	mov eax,0
+	mov ecx,5
+	mov esi,0
+L1:
+	add eax,arr1[esi]
+	add eax,arr2[esi]
+	add eax,arr3[esi]
+	mov res1[esi],eax
+	add esi,4
+	mov eax,0
+	loop L1
+
+	mov ecx,5
+	mov esi,0
+L2:
+	mov eax,res1[esi]
+	add esi,4
+	call WriteInt
+	call crlf
+	loop L2
+	exit
+main ENDP
+END main

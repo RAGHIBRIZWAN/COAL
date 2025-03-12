@@ -87,3 +87,47 @@ main PROC
 	call WriteInt
 main ENDP
 END main
+
+
+
+INCLUDE Irvine32.inc
+TITLE Multiple Procedures
+.data
+	a1 BYTE "ADD1",0
+	a2 BYTE "ADD2",0
+	a3 BYTE "ADD3",0
+.code
+main PROC
+	mov eax,5
+	mov ebx,5
+	call add1
+	call WriteInt
+	exit
+main ENDP
+
+add1 PROC
+	add eax,ebx
+	call add2
+	mov edx,OFFSET a1
+	call WriteString
+	call crlf
+	ret
+add1 ENDP
+
+add2 PROC
+	add eax,ebx
+	call add3
+	mov edx,OFFSET a2
+	call WriteString
+	call crlf
+	ret
+add2 ENDP
+
+add3 PROC
+	add eax,ebx
+	mov edx,OFFSET a3
+	call WriteString
+	call crlf
+	ret
+add3 ENDP
+END main

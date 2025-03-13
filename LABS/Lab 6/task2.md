@@ -1,20 +1,26 @@
 # TASK 2 (i)
 ```asm
-include irvine32.inc
+INCLUDE Irvine32.inc
+
 .code
-main proc
-	mov eax,0
-	mov ecx,4
+main PROC
+    mov eax, 1         
+    mov ecx, 4  
+    mov ebx, 1
 L1:
-	imul eax,10
-	add eax,1
-	call WriteInt
-	call crlf
-	loop L1
-exit
-main endp
-end main
+    push ecx
+    mov ecx, ebx
+L2:
+    call WriteInt
+    loop L2
+    call crlf
+    inc ebx
+    pop ecx
+    loop L1
+    exit
+main ENDP
+END main
 ```
 
 # Output1:
-![image](https://github.com/user-attachments/assets/eae208a9-8691-4a2d-8c4d-8f6fb93f0fc7)
+![image](https://github.com/user-attachments/assets/f2da56ef-ca22-4d89-9c52-ba939ce09934)

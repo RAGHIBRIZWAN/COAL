@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/3cf021d0-4320-4fc4-9cd9-499cb9046211)# TASK 2 (i)
+# TASK 2 (i)
 ```asm
 include irvine32.inc
 .code

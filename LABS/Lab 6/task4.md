@@ -2,23 +2,23 @@
 INCLUDE Irvine32.inc
 
 .data
-    source BYTE 6 DUP(?) 
-    target BYTE "Raghib", 0
+    source BYTE "Raghib", 0
+    target BYTE 6 DUP(?) 
 
 .code
 main PROC         
-    mov ecx, LENGTHOF target
+    mov ecx, LENGTHOF source
     mov esi, 0
 L1:
-    mov al, target[esi]
-    mov source[esi], al
+    mov al, source[esi]
+    mov target[esi], al
     inc esi
     loop L1
 
-    mov ecx, LENGTHOF source
+    mov ecx, LENGTHOF target
     mov esi, 0
 output:
-    mov al, source[esi]
+    mov al, target[esi]
     call WriteChar
     inc esi
     loop output

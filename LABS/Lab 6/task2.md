@@ -81,3 +81,33 @@ END main
 
 # OUTPUT:
 ![image](https://github.com/user-attachments/assets/3096f74c-0d80-4f58-b8ae-839c096b73e5)
+
+# TASK 2 (iv)
+```asm
+INCLUDE Irvine32.inc
+
+.code
+main PROC         
+    mov ecx, 4  
+    mov ebx, 4
+    mov edx,1
+L1:
+    push ecx
+    mov ecx, ebx
+    mov eax,edx
+L2:
+    call WriteInt
+    inc eax
+    loop L2
+    call crlf
+    dec ebx
+    ;dec edx
+    pop ecx
+    loop L1
+    exit
+main ENDP
+END main
+```
+
+# OUTPUT:
+![image](https://github.com/user-attachments/assets/f27bda48-9c1b-4374-9d30-c021933aa4c7)

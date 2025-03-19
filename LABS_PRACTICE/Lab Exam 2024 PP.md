@@ -142,3 +142,47 @@ main PROC
 main ENDP
 END main
 ```
+
+# Q4:
+
+```asm
+INCLUDE Irvine32.inc
+
+.data
+    newline BYTE 0Dh, 0Ah, 0  
+    six SDWORD 6          
+    eight SDWORD 8          
+
+.code
+main PROC
+    mov ecx,1
+L1:
+    mov ebx,1
+L2:
+    mov eax,six
+    call WriteInt
+    inc ebx
+    cmp ebx,ecx
+    JLE L2
+    call crlf
+    add ecx,2
+    cmp ecx,7
+    JLE L1  
+
+    mov ecx,1
+L3:
+    mov ebx,1
+L4:
+    mov eax,eight
+    call WriteInt
+    inc ebx
+    cmp ebx,3
+    JLE L4
+    call crlf
+    inc ecx
+    cmp ecx,4
+    JLE L3
+    exit
+main ENDP
+END main
+```

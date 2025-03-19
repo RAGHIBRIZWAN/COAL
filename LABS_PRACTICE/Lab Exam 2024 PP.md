@@ -87,3 +87,58 @@ exit
 main ENDP
 END main
 ```
+
+# Q3:
+
+```asm
+INCLUDE Irvine32.inc
+
+.data
+    week1 DWORD 1, 2, 3, 4, 5
+    week2 DWORD 1, 2, 3, 4, 5
+    total DWORD 0
+
+.code
+main PROC
+    mov esi, OFFSET week1
+    mov edi, OFFSET week2
+
+    ; Process snack 1
+    mov eax, [esi]    
+    mov ebx, [edi]    
+    add eax, ebx      
+    add total, eax    
+
+    ; Process snack 2
+    mov eax, [esi+4]  
+    mov ebx, [edi+4]  
+    add eax, ebx      
+    add total, eax    
+
+    ; Process snack 3
+    mov eax, [esi+8]  
+    mov ebx, [edi+8]  
+    add eax, ebx      
+    add total, eax    
+
+    ; Process snack 4
+    mov eax, [esi+12] 
+    mov ebx, [edi+12] 
+    add eax, ebx      
+    add total, eax    
+
+    ; Process snack 5
+    mov eax, [esi+16] 
+    mov ebx, [edi+16] 
+    add eax, ebx      
+    add total, eax    
+
+    ; Display total sales
+    mov eax, total
+    call WriteInt
+    call Crlf
+
+    exit
+main ENDP
+END main
+```

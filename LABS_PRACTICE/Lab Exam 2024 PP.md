@@ -1,3 +1,11 @@
+# PAPER:
+
+![image](https://github.com/user-attachments/assets/ab396c4b-cb01-4956-ae55-56c4745ddfbd)
+
+![image](https://github.com/user-attachments/assets/3a0451b7-e54b-460f-81ac-7c3efdea9b47)
+
+![image](https://github.com/user-attachments/assets/e2e8ee00-e999-49f2-a545-fb40274b5bc7)
+
 # Q1:
 
 ```asm

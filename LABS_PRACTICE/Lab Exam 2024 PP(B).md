@@ -5,6 +5,135 @@
 
 ![image](https://github.com/user-attachments/assets/efa4ab9a-5fd6-4b4d-a6da-477c6ada375b)
 
+# Q3:
+
+```asm
+INCLUDE Irvine32.inc
+
+.data
+    week1 DWORD 3 DUP(?)
+    week2 DWORD 3 DUP(?)
+    week3 DWORD 3 DUP(?)
+    week4 DWORD 3 DUP(?)
+    qs BYTE "Enter the cost: "
+    total DWORD 3 DUP(0)
+
+.code
+main PROC
+    mov esi, 0
+
+    ; Process snack 1
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt
+    mov week1[esi],eax
+    add esi,4
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt 
+    mov week1[esi],eax
+    add esi,4
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt
+    mov week1[esi],eax
+
+    mov esi,0
+
+    ; Process snack 2
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt
+    mov week2[esi],eax
+    add esi,4
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt 
+    mov week2[esi],eax
+    add esi,4
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt
+    mov week2[esi],eax   
+
+    mov esi,0
+
+    ; Process snack 3
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt
+    mov week3[esi],eax
+    add esi,4
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt 
+    mov week3[esi],eax
+    add esi,4
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt
+    mov week3[esi],eax
+
+    mov esi,0
+
+    ; Process snack 4
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt
+    mov week4[esi],eax
+    add esi,4
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt 
+    mov week4[esi],eax
+    add esi,4
+    mov edx,OFFSET qs
+    call writeString
+    call ReadInt
+    mov week4[esi],eax    
+
+    mov esi,0
+
+    mov eax,week1[esi]
+    mov total[esi],eax
+    mov eax,week2[esi]
+    add total[esi],eax
+    mov eax,week3[esi]
+    add total[esi],eax
+    add esi,4
+    mov eax,week1[esi]
+    mov total[esi],eax
+    mov eax,week2[esi]
+    add total[esi],eax
+    mov eax,week3[esi]
+    add total[esi],eax
+    add esi,4
+    mov eax,week1[esi]
+    mov total[esi],eax
+    mov eax,week2[esi]
+    add total[esi],eax
+    mov eax,week3[esi]
+    add total[esi],eax
+
+    mov esi,0
+
+    ; Display total sales
+    mov eax,total[esi]
+    call WriteInt
+    call crlf
+    add esi,4
+    mov eax,total[esi]
+    call WriteInt
+    call crlf
+    add esi,4
+    mov eax,total[esi]
+    call WriteInt
+    
+    exit
+main ENDP
+END main
+```
+
 # Q4:
 
 ```asm

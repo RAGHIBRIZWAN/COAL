@@ -34,5 +34,6 @@ end main
 
 ```
 
-### Output
-![image](https://github.com/user-attachments/assets/beeb14eb-17c9-4b69-8807-cfa571e8a73e)
+# Output
+![image](https://github.com/user-attachments/assets/2f604fc9-229c-4864-8982-c716d7139884)
+
